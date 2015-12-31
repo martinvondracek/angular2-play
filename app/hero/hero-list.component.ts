@@ -1,12 +1,11 @@
 import {Component} from 'angular2/core';
 import {OnInit} from 'angular2/core';
+import {Router} from 'angular2/router';
+
 import {Hero} from './hero';
-import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from './../services/hero.service';
-import {FetchJsonPipe} from '../pipes/fetch-json.pipe';
 
 @Component({
-  selector: 'hero-list',
   templateUrl: 'app/hero/hero-list.tpl.html',
   styles:[`
     .heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}
@@ -23,21 +22,21 @@ import {FetchJsonPipe} from '../pipes/fetch-json.pipe';
       top: -1px;
     }
     .selected { background-color: #EEE; color: #369; }
-  `],
-  directives: [HeroDetailComponent],
-  providers: [HeroService],
-  pipes: [FetchJsonPipe]
+  `]
 })
 
 export class HeroListComponent implements OnInit {
-  public title = 'Tour of Heroes';
+  public title = 'HEORES';
   public heroes = [];
   public selectedHero: Hero;
 
-  constructor(private _heroService: HeroService) {}
+  constructor(
+    private _router: Router,
+    private _heroService: HeroService
+  ) {}
 
   getHeroes() {
-    this._heroService.getHeroesSlowly()
+    this._heroService.getHeroes()
       .then(heroes => this.heroes = heroes);
   }
 
@@ -47,5 +46,6 @@ export class HeroListComponent implements OnInit {
 
   onSelect(hero: Hero) {
     this.selectedHero = hero;
+    this._router.navigate(['HeroDetail', {id: hero.id}]);
   }
 }

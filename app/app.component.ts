@@ -3,11 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {HeroListComponent} from './hero/hero-list.component';
 import {CrisisListComponent} from './crisis/crisis-list.component';
-import {HeroFormComponent} from './hero-form/hero-form.component';
-import {HeroBirthday} from './pipes/hero-birthday.component';
-import {PowerBooster} from './pipes/power-booster.component';
-import {PowerBoostCalculator} from './pipes/power-boost-calculator.component';
-import {HeroAsyncMessageComponent} from './pipes/hero-async-message.component';
+import {HeroDetailComponent} from './hero/hero-detail.component';
 
 @Component({
   selector: 'my-app',
@@ -18,8 +14,9 @@ import {HeroAsyncMessageComponent} from './pipes/hero-async-message.component';
 })
 
 @RouteConfig([
-  {path:'/crisis-center', name: 'CrisisCenter', component: CrisisListComponent},
-  {path:'/heroes', name: 'Heroes', component: HeroListComponent}
+  {path:'/crisis-center', name: 'CrisisCenter', component: CrisisListComponent, useAsDefault:true},
+  {path:'/heroes', name: 'Heroes', component: HeroListComponent},
+  {path:'/hero/:id', name: 'HeroDetail', component: HeroDetailComponent}
 ])
 
 export class AppComponent {}
