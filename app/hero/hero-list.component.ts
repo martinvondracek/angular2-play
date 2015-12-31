@@ -3,6 +3,7 @@ import {OnInit} from 'angular2/core';
 import {Hero} from './hero';
 import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from './../services/hero.service';
+import {FetchJsonPipe} from '../pipes/fetch-json.pipe';
 
 @Component({
   selector: 'hero-list',
@@ -24,7 +25,8 @@ import {HeroService} from './../services/hero.service';
     .selected { background-color: #EEE; color: #369; }
   `],
   directives: [HeroDetailComponent],
-  providers: [HeroService]
+  providers: [HeroService],
+  pipes: [FetchJsonPipe]
 })
 
 export class HeroListComponent implements OnInit {

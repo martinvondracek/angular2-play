@@ -1,0 +1,19 @@
+import {Pipe} from 'angular2/core';
+@Pipe({
+  name: 'fetch',
+  pure: false
+})
+export class FetchJsonPipe {
+  private fetchedValue: any;
+  private fetchPromise: Promise<any>;
+
+  transform(value:string, args:string[]): any {
+    if (!this.fetchPromise) {
+      this.fetchPromise = window.fetch(value)
+        .then((result:any) => result.json())
+        .then((json:any) => this.fetchedValue = json);
+    }
+
+    return this.fetchedValue;
+  }
+}

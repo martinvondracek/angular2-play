@@ -4,12 +4,19 @@ import {HeroFormComponent} from './hero-form/hero-form.component';
 import {HeroBirthday} from './pipes/hero-birthday.component';
 import {PowerBooster} from './pipes/power-booster.component';
 import {PowerBoostCalculator} from './pipes/power-boost-calculator.component';
+import {HeroAsyncMessageComponent} from './pipes/hero-async-message.component';
 
 @Component({
   selector: 'my-app',
   templateUrl: 'app/app.component.tpl.html',
-  directives: [HeroListComponent, HeroFormComponent, HeroBirthday, PowerBooster,
-  PowerBoostCalculator]
+  directives: [
+    HeroListComponent,
+    HeroFormComponent,
+    HeroBirthday,
+    PowerBooster,
+    PowerBoostCalculator,
+    HeroAsyncMessageComponent
+  ]
 })
 
 export class AppComponent {}
