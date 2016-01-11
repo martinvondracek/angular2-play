@@ -25,11 +25,13 @@ export class HeroDetailComponent {
   constructor(
     private _router:Router,
     private _routeParams:RouteParams,
-    private _heroService:HeroService){}
+    private _heroService:HeroService) {}
+
   ngOnInit() {
     let id = this._routeParams.get('id');
     this._heroService.getHero(id).then(hero => this.hero = hero);
   }
+  
   gotoHeroes() {
     this._router.navigate(['Heroes']);
   }
