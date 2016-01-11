@@ -2,12 +2,11 @@ import {Component, OnInit} from 'angular2/core';
 import {Router, RouteParams} from 'angular2/router';
 
 import {Crisis} from './crisis';
-import {CrisisService} from '../services/crisis-service';
+import {CrisisService} from './../services/crisis-service';
 
 @Component({
   template: `
-    <h1>{{title}}</h1>
-    <h2>Crisis</h2>
+    <h2>Crisis list</h2>
     <ul>
       <li *ngFor="#crisis of crises"
         [class.selected]="isSelected(crisis)"

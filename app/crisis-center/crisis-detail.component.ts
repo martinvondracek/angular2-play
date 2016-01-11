@@ -6,7 +6,7 @@ import {CrisisService} from '../services/crisis-service';
 
 @Component({
   template: `
-    <h2>Crisis</h2>
+    <h2>Crisis detail</h2>
     <div *ngIf="crisis">
       <h3>{{crisis.name}} details!</h3>
       <div><label>id: </label>{{crisis.id}}</div>
