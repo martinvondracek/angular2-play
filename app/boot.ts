@@ -3,10 +3,10 @@ import {ROUTER_PROVIDERS} from 'angular2/router';
 
 import {AppComponent} from './app.component';
 import {HeroService} from './services/hero.service';
-import {CrisisService} from './services/crisis-service';
+import {DialogService} from './dialog.service';
 
 bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
   HeroService,
-  CrisisService
+  DialogService
 ]);

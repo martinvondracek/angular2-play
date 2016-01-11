@@ -24,8 +24,11 @@ export class CrisisListComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _service: CrisisService
-  ) { }
+    private _service: CrisisService,
+    routeParams: RouteParams
+  ) {
+    this._selectedId = +routeParams.get('id');
+  }
 
   ngOnInit() {
     this._service.getCrises()
