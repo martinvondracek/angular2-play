@@ -8,6 +8,8 @@ import {HeroDetailComponent} from './hero/hero-detail.component';
 
 import {HeroFormComponent} from './hero-form/hero-form.component';
 
+import {DirectivesComponent} from './directives/directives.component';
+
 @Component({
   selector: 'my-app',
   templateUrl: 'app/app.component.tpl.html',
@@ -24,7 +26,9 @@ import {HeroFormComponent} from './hero-form/hero-form.component';
 
   {path:'/hero-form', name: 'HeroForm', component: HeroFormComponent},
 
-  {path: '/disaster', name: 'Asteroid', redirectTo: ['CrisisCenter', 'CrisisDetail', {id:3}]}
+  {path: '/disaster', name: 'Asteroid', redirectTo: ['CrisisCenter', 'CrisisDetail', {id:3}]},
+
+  {path:'/directives', name: 'Directives', component: DirectivesComponent}
 ])
 
 export class AppComponent {}
