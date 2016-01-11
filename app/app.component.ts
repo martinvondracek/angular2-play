@@ -22,7 +22,9 @@ import {HeroFormComponent} from './hero-form/hero-form.component';
   {path:'/heroes', name: 'Heroes', component: HeroListComponent},
   {path:'/hero/:id', name: 'HeroDetail', component: HeroDetailComponent},
 
-  {path:'/hero-form', name: 'HeroForm', component: HeroFormComponent}
+  {path:'/hero-form', name: 'HeroForm', component: HeroFormComponent},
+
+  {path: '/disaster', name: 'Asteroid', redirectTo: ['CrisisCenter', 'CrisisDetail', {id:3}]}
 ])
 
 export class AppComponent {}
